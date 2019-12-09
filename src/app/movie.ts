@@ -1,9 +1,14 @@
+import { Genre } from './genre';
+import { Director } from './director';
+import { Actor } from './actor';
+import { Review } from './review';
+
 export class Movie {
     title: string = '';
-    genre: string = '';
-    actor: string = '';
-    director: string = '';
+    genres: Genre[] = [];
+    director: Director = new Director("", 0, 0);
+    actors: Actor[] = [];
     description: string = '';
     releaseDate: string = '';
-    review: string = '';
+    reviews: Review[] = [];
 }

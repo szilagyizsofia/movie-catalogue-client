@@ -25,21 +25,21 @@ export class MovieListComponent implements OnInit {
 
   onFormSubmit(movie: Movie) {
       if(this.selectedMovie.title.length > 0){
-        this.selectedMovie.genre = movie.genre;
+        this.selectedMovie.genres = movie.genres;
         this.selectedMovie.director = movie.director;
-        this.selectedMovie.actor = movie.actor;
+        this.selectedMovie.actors = movie.actors;
         this.selectedMovie.description = movie.description;
         this.selectedMovie.releaseDate = movie.releaseDate;
-        this.selectedMovie.review = movie.review;
+        this.selectedMovie.reviews = movie.reviews;
       }
       else {
         this.selectedMovie.title = movie.title;
-        this.selectedMovie.genre = movie.genre;
+        this.selectedMovie.genres = movie.genres;
         this.selectedMovie.director = movie.director;
-        this.selectedMovie.actor = movie.actor;
+        this.selectedMovie.actors = movie.actors;
         this.selectedMovie.description = movie.description;
         this.selectedMovie.releaseDate = movie.releaseDate;
-        this.selectedMovie.review = movie.review;
+        this.selectedMovie.reviews = movie.reviews;
         this.movies.push(this.selectedMovie);
       }
       this.selectedMovie = null;

@@ -16,12 +16,12 @@
         <tbody>
           <tr *ngFor="let movie of movies" (click)="onSelectMovie(movie)" [class.table-info]="movie === selectedMovie" >
             <th scope="row">{{ movie.title }}</th>
-            <td>{{ movie.genre }}</td>
-            <td>{{ movie.director }}</td>
-            <td>{{ movie.actor }}</td>
+            <td>{{ movie.genres[0].name }}</td>
+            <td>{{ movie.director.name }}</td>
+            <td>{{ movie.actors[0].name }}</td>
             <td>{{ movie.description }}</td>
             <td>{{ movie.releaseDate }}</td>
-            <td>{{ movie.review }}</td>
+            <td>{{ movie.reviews[0].review }}</td>
             <td>
               <a [routerLink]="['/movies', movie.title]">See more</a>
             </td>
