@@ -4,11 +4,20 @@ import { Genre } from './genre';
 import { Director } from './director';
 import { Actor } from './actor';
 import { Review } from './review';
+import { HttpClient, HttpHeaders } from '@angular/common/http'; // import
+
+const httpOptions = {
+  headers: new HttpHeaders({ 
+    'Content-Type': 'application/json'
+  })
+};
 
 @Injectable({
   providedIn: 'root'
 })
 export class MovieService {
+
+  private movieUrl = 'http://localhost:8080/movies';
 
   movies: Movie[] = [
     {
@@ -35,10 +44,12 @@ export class MovieService {
     }
   ];
   
-  constructor() { }
+  constructor(
+    private http: HttpClient
+  ) { }
   
-  getMovies() {
-    return this.movies;
+  getMovies(): Promise<Movie[]> {
+    return this.http.get<Movie[]>(`${this.movieUrl}`, httpOptions).toPromise();
   }
   
   getMovie(title) {

@@ -15,8 +15,7 @@ export class MovieListComponent implements OnInit {
 
   constructor(
     private movieService: MovieService
-  ) { 
-    this.movies = movieService.getMovies();
+  ) {
   }
 
   onSelectMovie(movie) {
@@ -49,6 +48,8 @@ export class MovieListComponent implements OnInit {
     this.selectedMovie = new Movie();
   }
 
-  ngOnInit() {  }
+  async ngOnInit(): Promise<void> {
+    this.movies = await this.movieService.getMovies();
+  }
 
 }
