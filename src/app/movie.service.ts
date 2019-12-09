@@ -12,6 +12,8 @@ export class MovieService {
 
   movies: Movie[] = [
     {
+      id: 0,
+      version: 0,
       title: 'Titanic',
       genres: [new Genre("drama", 0, 1)],
       director: new Director('James Cameron', 0, 0),
@@ -21,6 +23,8 @@ export class MovieService {
       reviews: [new Review('good', 0, 0)]
     },
     {
+      id: 1,
+      version: 0,
       title: 'Fight Club',
       genres: [new Genre("drama", 0, 1)],
       director: new Director('David Fincher', 1, 0),
