@@ -1,0 +1,22 @@
+<h1 class="display-2">{{ movie.title }}</h1>
+<dl class="row">
+  
+  <dt class="col-sm-3">Genre</dt>
+  <dd class="col-sm-9">{{ movie.genre }}</dd>
+  
+  <dt class="col-sm-3">Director</dt>
+  <dd class="col-sm-9">{{ movie.director }}</dd>
+
+  <dt class="col-sm-3">Actor</dt>
+  <dd class="col-sm-9">{{ movie.actor }}</dd>
+  
+  <dt class="col-sm-3">Description</dt>
+  <dd class="col-sm-9">{{ movie.description }}</dd>
+  
+  <dt class="col-sm-3">Date</dt>
+  <dd class="col-sm-9">{{ movie.releaseDate }}</dd>
+
+  <dt class="col-sm-3">Review</dt>
+  <dd class="col-sm-9">{{ movie.review }}</dd>
+</dl>
+<button mat-raised-button routerLink="/movies">Back</button>

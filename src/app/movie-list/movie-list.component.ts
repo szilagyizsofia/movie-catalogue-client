@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Movie } from "../movie";
+import { MovieService } from "../movie.service"
 
 @Component({
   selector: 'movie-list',
@@ -7,19 +8,46 @@ import { Movie } from "../movie";
   styleUrls: ['./movie-list.component.css']
 })
 export class MovieListComponent implements OnInit {
-  movies: Movie[] = [
-    {
-      title: 'Titanic',
-      genre: 'drama',
-      director: 'James Cameron',
-      actor: 'Leonardo DiCaprio',
-      description: 'A seventeen-year-old aristocrat falls in love with a kind but poor artist aboard the luxurious, ill-fated R.M.S. Titanic.',
-      releaseDate: '1997',
-      review: 'good'
-    }
-  ];
 
-  constructor() { }
+  public selectedMovie: Movie;
+
+  private movies: Movie[] = [];
+
+  constructor(
+    private movieService: MovieService
+  ) { 
+    this.movies = movieService.getMovies();
+  }
+
+  onSelectMovie(movie) {
+    this.selectedMovie = movie;
+  }
+
+  onFormSubmit(movie: Movie) {
+      if(this.selectedMovie.title.length > 0){
+        this.selectedMovie.genre = movie.genre;
+        this.selectedMovie.director = movie.director;
+        this.selectedMovie.actor = movie.actor;
+        this.selectedMovie.description = movie.description;
+        this.selectedMovie.releaseDate = movie.releaseDate;
+        this.selectedMovie.review = movie.review;
+      }
+      else {
+        this.selectedMovie.title = movie.title;
+        this.selectedMovie.genre = movie.genre;
+        this.selectedMovie.director = movie.director;
+        this.selectedMovie.actor = movie.actor;
+        this.selectedMovie.description = movie.description;
+        this.selectedMovie.releaseDate = movie.releaseDate;
+        this.selectedMovie.review = movie.review;
+        this.movies.push(this.selectedMovie);
+      }
+      this.selectedMovie = null;
+  }
+
+  onNewClick() {
+    this.selectedMovie = new Movie();
+  }
 
   ngOnInit() {  }
 
