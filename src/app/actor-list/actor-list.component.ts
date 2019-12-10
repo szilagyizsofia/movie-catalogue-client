@@ -18,6 +18,13 @@ export class ActorListComponent implements OnInit {
   ) {
   }
 
+  onDeleteClick(id: number) {
+    this.actorService.deleteActor(id)
+    .then(async () => {
+      this.actors = await this.actorService.getActors();
+    })
+  }
+
   async ngOnInit(): Promise<void> {
     this.actors = await this.actorService.getActors();
   }

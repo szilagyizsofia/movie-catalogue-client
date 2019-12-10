@@ -9,9 +9,12 @@
           </tr>
         </thead>
         <tbody>
-          <tr *ngFor="let movie of movies" (click)="onSelectActor(actor)" [class.table-info]="actor === selectedActor" >
+          <tr *ngFor="let actor of actors" >
             <th scope="row">{{ actor.id }}</th>
             <td>{{ actor.name }}</td>
+            <td>
+                <button mat-raised-button color="primary" (click)="onDeleteClick(actor.id)">Delete</button>
+              </td>
           </tr>
         </tbody>
       </table>

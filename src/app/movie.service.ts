@@ -31,11 +31,11 @@ export class MovieService {
     return this.http.post<Movie>(`${this.movieUrl}`, movie, httpOptions).toPromise();
   }
   
-  updateIssue(movie: Movie): Promise<Movie> {
+  updateMovie(movie: Movie): Promise<Movie> {
     return this.http.put<Movie>(`${this.movieUrl}/${movie.id}`, movie, httpOptions).toPromise();
   }
   
-  deleteIssue(id): Promise<Movie> {
+  deleteMovie(id): Promise<Movie> {
     return this.http.delete<Movie>(`${this.movieUrl}/${id}`, httpOptions).toPromise();
   }
 }

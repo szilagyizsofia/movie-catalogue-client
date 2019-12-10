@@ -22,4 +22,8 @@ export class ActorService {
   getActors(): Promise<Actor[]> {
     return this.http.get<Actor[]>(`${this.actorUrl}`, httpOptions).toPromise();
   }
+
+  deleteActor(id): Promise<Actor> {
+    return this.http.delete<Actor>(`${this.actorUrl}/${id}`, httpOptions).toPromise();
+  }
 }
