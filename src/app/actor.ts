@@ -1,7 +1,8 @@
 export class Actor {
-    name: string;
     id: number;
     version: number;
+    name: string;
+    
 
     constructor(name, id, version){
         this.name = name;

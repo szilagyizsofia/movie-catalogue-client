@@ -11,13 +11,15 @@ import { MovieListComponent } from './movie-list/movie-list.component';
 import { MovieFormComponent } from './movie-form/movie-form.component';
 import { MovieDetailComponent } from './movie-detail/movie-detail.component';
 import { MatFormFieldModule, MatInputModule } from '@angular/material';
+import { ActorListComponent } from './actor-list/actor-list.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     MovieListComponent,
     MovieFormComponent,
-    MovieDetailComponent
+    MovieDetailComponent,
+    ActorListComponent
   ],
   imports: [
     BrowserModule,
