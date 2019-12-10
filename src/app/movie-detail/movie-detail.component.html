@@ -2,13 +2,13 @@
 <dl class="row">
   
   <dt class="col-sm-3">Genre</dt>
-  <dd class="col-sm-9">{{ movie.genre }}</dd>
+  <dd class="col-sm-9">{{ movie.genres[0].name }}</dd>
   
   <dt class="col-sm-3">Director</dt>
-  <dd class="col-sm-9">{{ movie.director }}</dd>
+  <dd class="col-sm-9">{{ movie.director.name }}</dd>
 
   <dt class="col-sm-3">Actor</dt>
-  <dd class="col-sm-9">{{ movie.actor }}</dd>
+  <dd class="col-sm-9">{{ movie.actors[0].name }}</dd>
   
   <dt class="col-sm-3">Description</dt>
   <dd class="col-sm-9">{{ movie.description }}</dd>
@@ -17,6 +17,6 @@
   <dd class="col-sm-9">{{ movie.releaseDate }}</dd>
 
   <dt class="col-sm-3">Review</dt>
-  <dd class="col-sm-9">{{ movie.review }}</dd>
+  <dd class="col-sm-9">{{ movie.reviews[0].review }}</dd>
 </dl>
 <button mat-raised-button routerLink="/movies">Back</button>

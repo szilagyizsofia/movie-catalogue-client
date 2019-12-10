@@ -17,9 +17,9 @@ export class MovieDetailComponent implements OnInit {
     private movieService: MovieService
   ) { }
   
-  ngOnInit() {
+  async ngOnInit(): Promise<void> {
     const title = this.route.snapshot.paramMap.get('title');
-    this.movie = this.movieService.getMovie(title);
+    this.movie = await this.movieService.getMovie(title);
   }
 
 }

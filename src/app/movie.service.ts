@@ -51,8 +51,8 @@ export class MovieService {
   getMovies(): Promise<Movie[]> {
     return this.http.get<Movie[]>(`${this.movieUrl}`, httpOptions).toPromise();
   }
-  
-  getMovie(title) {
-    return this.movies.find(i => i.title == title);
+
+  getMovie(title: String): Promise<Movie> {
+    return this.http.get<Movie>(`${this.movieUrl}/name/${title}`, httpOptions).toPromise();
   }
 }
