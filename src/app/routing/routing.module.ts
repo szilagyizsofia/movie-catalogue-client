@@ -6,6 +6,7 @@ import { MovieFormComponent } from '../movie-form/movie-form.component';
 import { MovieDetailComponent } from "../movie-detail/movie-detail.component";
 import { ActorListComponent } from '../actor-list/actor-list.component';
 import { ActorFormComponent } from '../actor-form/actor-form.component';
+import { MovieActorListComponent } from '../movie-actor-list/movie-actor-list.component';
 
 const routes: Routes = [
   {
@@ -32,6 +33,10 @@ const routes: Routes = [
   {
     path: 'actors/add',
     component: ActorFormComponent
+  },
+  {
+    path: 'actors/:name',
+    component: MovieActorListComponent
   },
 ];
 
