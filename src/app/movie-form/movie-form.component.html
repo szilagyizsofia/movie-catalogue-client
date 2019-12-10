@@ -15,58 +15,7 @@
                     </mat-error>
                 </mat-form-field>
         </div>
-        
-        <div class="form-group">
-                <mat-form-field>
-                      <input
-                      name="genre"
-                      [(ngModel)]="model.genre"
-                      matInput type="text"
-                      aria-describedby="genreHelp"
-                      placeholder="Enter genre"
-                      required
-                      #genre="ngModel"
-                    >
-                    <mat-error *ngIf="genre.invalid && (genre.dirty || genre.touched) && genre.errors.required">
-                      Genre is required!
-                    </mat-error>
-                </mat-form-field>
-        </div>
-      
-        <div class="form-group">
-                <mat-form-field>
-                            <input
-                            name="director"
-                            [(ngModel)]="model.director"
-                            matInput type="text"
-                            aria-describedby="directorHelp"
-                            placeholder="Enter director"
-                            required
-                            #director="ngModel"
-                          >
-                          <mat-error *ngIf="director.invalid && (director.dirty || director.touched) && director.errors.required">
-                            Director is required!
-                          </mat-error>
-                      </mat-form-field>
-              </div>
-      
-        <div class="form-group">
-            <mat-form-field>
-                  <input
-                    name="actor"
-                    [(ngModel)]="model.actor"
-                    matInput type="text"
-                    aria-describedby="actorHelp"
-                    placeholder="Enter actor"
-                    required
-                    #actor="ngModel"
-                >
-                <mat-error *ngIf="actor.invalid && (actor.dirty || actor.touched) && actor.errors.required">
-                    Actor is required!
-                </mat-error>
-            </mat-form-field>
-        </div>
-        
+
         <div class="form-group">
           <!-- <small id="descriptionHelp" class="form-text text-muted">The error details</small> -->
           <mat-form-field>
@@ -89,12 +38,6 @@
                         Release date is required!
                     </mat-error>
                 </mat-form-field>
-            </div>
-
-            <div class="form-group">
-                    <mat-form-field>
-                          <textarea name="review" [(ngModel)]="model.review" matInput aria-describedby="reviewHelp" placeholder="Enter review"></textarea>
-                    </mat-form-field>
-                  </div>            
+            </div>         
         
         <button [disabled]="!movieForm.valid" type="submit" mat-raised-button color="primary">Save movie</button></form>

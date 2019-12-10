@@ -1,0 +1,41 @@
+<form (submit)="submit(actorForm)" #actorForm="ngForm">
+    <div class="form-group">
+            <mat-form-field>
+                  <input
+                  name="id"
+                  [(ngModel)]="model.id"
+                  matInput type="text"
+                  aria-describedby="idHelp"
+                  placeholder="Enter id"
+                  #id="ngModel"
+                >
+            </mat-form-field>
+    </div>
+
+    <div class="form-group">
+        <mat-form-field>
+              <input
+              name="version"
+              [(ngModel)]="model.version"
+              matInput type="text"
+              aria-describedby="versionHelp"
+              placeholder="Enter version"
+              #version="ngModel"
+            >
+        </mat-form-field>
+    </div>
+
+    <div class="form-group">
+            <mat-form-field>
+                <input
+                    name="name"
+                    [(ngModel)]="model.name"
+                    matInput type="text"
+                    aria-describedby="nameHelp"
+                    placeholder="Enter name"
+                    #name="ngModel"
+                >
+            </mat-form-field>
+        </div>         
+    
+    <button type="submit" mat-raised-button color="primary">Save Actor</button></form>

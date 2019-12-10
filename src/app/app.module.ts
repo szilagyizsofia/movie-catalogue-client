@@ -12,6 +12,7 @@ import { MovieFormComponent } from './movie-form/movie-form.component';
 import { MovieDetailComponent } from './movie-detail/movie-detail.component';
 import { MatFormFieldModule, MatInputModule } from '@angular/material';
 import { ActorListComponent } from './actor-list/actor-list.component';
+import { ActorFormComponent } from './actor-form/actor-form.component';
 
 @NgModule({
   declarations: [
@@ -19,7 +20,8 @@ import { ActorListComponent } from './actor-list/actor-list.component';
     MovieListComponent,
     MovieFormComponent,
     MovieDetailComponent,
-    ActorListComponent
+    ActorListComponent,
+    ActorFormComponent
   ],
   imports: [
     BrowserModule,

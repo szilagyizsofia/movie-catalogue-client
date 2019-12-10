@@ -5,6 +5,7 @@ import { MovieListComponent } from "../movie-list/movie-list.component";
 import { MovieFormComponent } from '../movie-form/movie-form.component';
 import { MovieDetailComponent } from "../movie-detail/movie-detail.component";
 import { ActorListComponent } from '../actor-list/actor-list.component';
+import { ActorFormComponent } from '../actor-form/actor-form.component';
 
 const routes: Routes = [
   {
@@ -27,6 +28,10 @@ const routes: Routes = [
   {
     path: 'actors',
     component: ActorListComponent
+  },
+  {
+    path: 'actors/add',
+    component: ActorFormComponent
   },
 ];
 

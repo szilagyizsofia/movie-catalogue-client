@@ -25,6 +25,13 @@ export class ActorListComponent implements OnInit {
     })
   }
 
+  onFormSubmit(actor: Actor) {
+    this.actorService.createActor(actor)
+                        .then(createdActor => {
+                          this.actors.push(createdActor);
+                        });
+}
+
   async ngOnInit(): Promise<void> {
     this.actors = await this.actorService.getActors();
   }

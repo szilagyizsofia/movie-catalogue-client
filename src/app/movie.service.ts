@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { Movie } from "./movie";
 import { HttpClient, HttpHeaders } from '@angular/common/http'; // import
+import { MovieObj } from './movie-obj';
 
 const httpOptions = {
   headers: new HttpHeaders({ 
@@ -27,8 +28,8 @@ export class MovieService {
     return this.http.get<Movie>(`${this.movieUrl}/name/${title}`, httpOptions).toPromise();
   }
 
-  createMovie(movie: Movie): Promise<Movie> {
-    return this.http.post<Movie>(`${this.movieUrl}`, movie, httpOptions).toPromise();
+  createMovie(movie: MovieObj): Promise<MovieObj> {
+    return this.http.post<MovieObj>(`${this.movieUrl}`, movie, httpOptions).toPromise();
   }
   
   updateMovie(movie: Movie): Promise<Movie> {
